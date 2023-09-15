@@ -1,5 +1,4 @@
 # food-corner-server
-# Time Keeper
 
 Website live-link: https://food-corner-41608.web.app/
 
