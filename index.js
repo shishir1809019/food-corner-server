@@ -68,12 +68,6 @@ async function run() {
       next();
     }
 
-    /**
-     * 0. do not show secure links to those who should not see the links
-     * 1. use jwt token: verifyJWT
-     * 2. use verifyAdmin middleware
-    */
-
     // users related apis
     app.get('/users', verifyJWT, verifyAdmin, async (req, res) => {
       const result = await usersCollection.find().toArray();
@@ -194,23 +188,9 @@ run().catch(console.dir);
 
 
 app.get('/', (req, res) => {
-  res.send('It is sitting')
+  res.send('Food corner activated')
 })
 
 app.listen(port, () => {
   console.log(`Food corner is sitting on port ${port}`);
 })
-
-
-/**
- * --------------------------------
- *      NAMING CONVENTION
- * --------------------------------
- * users : userCollection
- * app.get('/users')
- * app.get('/users/:id')
- * app.post('/users')
- * app.patch('/users/:id')
- * app.put('/users/:id')
- * app.delete('/users/:id')
-*/
